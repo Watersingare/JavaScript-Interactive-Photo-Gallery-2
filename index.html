@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2: Thư viện ảnh Nâng cao (Accessibility)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .gallery-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Khung hiển thị lớn */
+        #image {
+            width: 650px;
+            height: 380px;
+            border: 4px solid #2c3e50;
+            border-radius: 8px;
+            margin: 0 auto 20px auto;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            line-height: 380px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            background-color: #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        /* 6 ảnh thu nhỏ nằm ngang */
+        .preview {
+            width: 110px;
+            height: 75px;
+            margin: 6px;
+            cursor: pointer;
+            border: 3px solid #fff;
+            border-radius: 6px;
+            object-fit: cover;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        /* Hiệu ứng khi di chuột hoặc bấm phím Tab */
+        .preview:hover, .preview:focus {
+            border-color: #3498db;
+            transform: scale(1.08);
+            outline: 3px solid #ff9800; /* Viền cam nổi bật khi bấm Tab */
+        }
+    </style>
+</head>
+<body onload="setTabindex()">
+
+    <div class="gallery-container">
+        <!-- Khung hiển thị lớn -->
+        <div id="image">
+            Di chuột hoặc bấm Tab qua một hình ảnh bên dưới để hiển thị ở đây.
+        </div>
+
+        <!-- 6 ảnh thu nhỏ (Giống Bài 1 nhưng nâng cấp đủ 4 sự kiện chuột & bàn phím) -->
+        <img class="preview" 
+             src="https://picsum.photos/id/1003/600/400" 
+             alt="Chú hươu ngơ ngác trong rừng" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()"
+             onfocus="upDate(this)"
+             onblur="unDo()">
+
+        <img class="preview" 
+             src="https://picsum.photos/id/1024/600/400" 
+             alt="Chú đại bàng tung cánh" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()"
+             onfocus="upDate(this)"
+             onblur="unDo()">
+
+        <img class="preview" 
+             src="https://picsum.photos/id/1018/600/400" 
+             alt="Dãy núi đá hùng vĩ" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()"
+             onfocus="upDate(this)"
+             onblur="unDo()">
+             <img class="preview" 
+             src="https://picsum.photos/id/1043/600/400" 
+             alt="Rừng nguyên sinh xanh mát" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()"
+             onfocus="upDate(this)"
+             onblur="unDo()">
+
+        <img class="preview" 
+             src="https://picsum.photos/id/1029/600/400" 
+             alt="Thành phố rộng lớn" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()"
+             onfocus="upDate(this)"
+             onblur="unDo()">
+
+        <img class="preview" 
+             src="https://picsum.photos/id/1036/600/400" 
+             alt="Khung cảnh tuyết phủ trắng xóa" 
+             onmouseover="upDate(this)" 
+             onmouseleave="unDo()"
+             onfocus="upDate(this)"
+             onblur="unDo()">
+    </div>
+
+    <!-- Kết nối file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
